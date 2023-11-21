@@ -5,11 +5,12 @@ import com.lot.repository.OwnerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @AllArgsConstructor
-public class OwnerServiceImpl implements OwnerService{
+public class OwnerServiceImpl implements OwnerService {
+
     private OwnerRepository repository;
+
     @Override
     public Owner save(Owner owner) {
         return repository.save(owner);
@@ -19,4 +20,5 @@ public class OwnerServiceImpl implements OwnerService{
     public Owner findById(Long id) {
         return repository.findById(id).orElseGet(null);
     }
+
 }

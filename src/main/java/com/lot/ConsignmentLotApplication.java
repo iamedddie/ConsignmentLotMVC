@@ -20,7 +20,7 @@ public class ConsignmentLotApplication {
 
 		OwnerService os = context.getBean(OwnerService.class);
 		Owner owner = new Owner();
-		owner.setName("Eddy");
+		owner.("Eddy");
 		owner=os.save(owner);
 
 		VehicleService vs = context.getBean(VehicleService.class);
@@ -28,13 +28,13 @@ public class ConsignmentLotApplication {
 		Truck truck =new Truck();
 		truck.set4wd(true);
 		truck.setMake("Dodge");
-		truck.setOwner(owner);
+		truck.(owner);
 
 		Vehicle v1 = vs.save(truck);
 		Car car = new Car();
 		car.setMake("subaru");
 		car.setType("CrossTrek");
-		car.setOwner(owner);
+		car.(owner);
 
 		Vehicle v2 = vs.save(car);
 
@@ -43,12 +43,14 @@ public class ConsignmentLotApplication {
 		System.out.println(v2.getId());
 		System.out.println(v2.getMake());
 
+
+		System.out.println(os.findById(1L).getVehicles());
+
+
 		List<Vehicle> vehicles = vs.findAllVehicles();
 		for(Vehicle vehicle: vehicles) {
 			System.out.println(vehicle.getMake());
-			System.out.println(vehicle.getOwner().getName());
+			System.out.println(vehicle.getOwners());
 		}
-		System.out.println(os.findById(1L).getVehicles());
 	}
-
 }

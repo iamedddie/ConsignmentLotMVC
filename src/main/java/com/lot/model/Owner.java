@@ -18,15 +18,13 @@ public class Owner {
     @GeneratedValue
     private Long id;
 
-    private String name;
-
+    //@OneToMany(mappedBy = "owner")
+    //private List<Vehicle> vehicles;
     @ManyToMany
     @JoinTable(
-            name="owner_vehicle",
-            joinColumns = @JoinColumn(name = "owner_id"),
-            inverseJoinColumns = @JoinColumn(name ="vehicle_id")
-    )
+        name = "owner_vehicle",
+        joinColumns = @JoinColumn(name = "owner_id"),
+        inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
     private List<Vehicle> vehicles;
-
 
 }

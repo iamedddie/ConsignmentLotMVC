@@ -7,12 +7,8 @@ import lombok.Setter;
 
 import java.util.List;
 
-
-//@MappedSuperclass
-
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="Vehicle Type")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
 @Getter
 @Setter
@@ -21,13 +17,9 @@ public class Vehicle {
     @Id
     @GeneratedValue
     private Long id;
+
     private String make;
 
     @ManyToMany
-   private List<Owner> owner;
-
-    @Override
-    public String toString() {
-        return make;
-    }
+    private List<Owner> owners;
 }

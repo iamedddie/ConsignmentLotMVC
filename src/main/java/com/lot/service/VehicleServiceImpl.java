@@ -1,6 +1,5 @@
 package com.lot.service;
 
-
 import com.lot.model.Vehicle;
 import com.lot.repository.VehicleRepository;
 import lombok.AllArgsConstructor;
@@ -26,7 +25,4 @@ public class VehicleServiceImpl implements VehicleService {
     public Vehicle save(Vehicle vehicle) {
         return repository.save(vehicle);
     }
-
-
-
 }
