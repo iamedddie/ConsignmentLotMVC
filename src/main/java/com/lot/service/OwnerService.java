@@ -9,4 +9,5 @@ import org.springframework.stereotype.Service;
 public interface OwnerService {
 
     Owner save (Owner owner);
+    Owner findById (Long id);
 }

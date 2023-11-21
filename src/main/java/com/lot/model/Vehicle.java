@@ -1,15 +1,15 @@
 package com.lot.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@MappedSuperclass
+//@MappedSuperclass
+
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 @NoArgsConstructor
 @Getter
 @Setter
@@ -23,4 +23,8 @@ public class Vehicle {
     @ManyToOne
     Owner owner;
 
+    @Override
+    public String toString() {
+        return make;
+    }
 }
