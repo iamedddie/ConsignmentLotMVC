@@ -9,7 +9,7 @@ import lombok.Setter;
 //@MappedSuperclass
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="Vehicle Type")
 @NoArgsConstructor
 @Getter
