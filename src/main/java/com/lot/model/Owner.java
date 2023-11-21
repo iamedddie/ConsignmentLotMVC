@@ -17,6 +17,7 @@ public class Owner {
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
 
     //@OneToMany(mappedBy = "owner")
     //private List<Vehicle> vehicles;
