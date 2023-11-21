@@ -15,4 +15,5 @@ import lombok.Setter;
 @Setter
 public class Car extends Vehicle{
     private  String type;
+
 }

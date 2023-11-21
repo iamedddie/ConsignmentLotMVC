@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 //@MappedSuperclass
 
@@ -21,8 +23,8 @@ public class Vehicle {
     private Long id;
     private String make;
 
-    @ManyToOne
-    Owner owner;
+    @ManyToMany
+   private List<Owner> owner;
 
     @Override
     public String toString() {
